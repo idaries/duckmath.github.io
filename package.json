@@ -1,0 +1,22 @@
+{
+"name": "cloud-run-app",
+"version": "1.0.0",
+"description": "A minimal Node.js app for Cloud Run deployment.",
+"main": "server.js",
+"scripts": {
+// CRITICAL: The Dockerfile uses 'CMD [ "npm", "start" ]', so this script must exist.
+"start": "node server.js",
+"test": "echo "Error: no test specified" && exit 1"
+},
+"keywords": [
+"node",
+"cloud-run",
+"gcp"
+],
+"author": "",
+"license": "ISC",
+"dependencies": {
+// We add 'express' as a common web server framework example
+"express": "^4.19.2"
+}
+}
