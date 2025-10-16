@@ -1,22 +1,21 @@
-# 1. Use the official Node.js image as a base
+# Use the official Node.js image as a base
 FROM node:20-slim
 
-# 2. Set the working directory
+# Set the working directory inside the container
 WORKDIR /usr/src/app
 
-# 3. Copy package.json and package-lock.json to the working directory
-# This step is done separately to leverage Docker's build cache
-COPY package*.json ./
+# Copy the Node.js manifest file (package.json)
+# This step fails if package.json is not in the same directory as the Dockerfile
+COPY package.json ./
 
-# 4. Install dependencies
+# Install dependencies listed in package.json
 RUN npm install
 
-# 5. Copy the rest of the application source code
+# Copy the rest of the application source code (including server.js)
 COPY . .
 
-# 6. Cloud Run requires your container to listen on the port specified by the PORT environment variable,
-# which defaults to 8080 if not set.
+# Cloud Run requires the container to listen on the port specified by the PORT environment variable.
 EXPOSE 8080
 
-# 7. Define the command to run the application
+# Define the command to run the application (runs 'node server.js')
 CMD [ "npm", "start" ]
