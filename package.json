@@ -5,15 +5,8 @@
 "main": "server.js",
 "scripts": {
 "start": "node server.js",
-"test": "echo 'No test specified'"
+"test": "exit 0"
 },
-"keywords": [
-"node",
-"cloud-run",
-"gcp"
-],
-"author": "",
-"license": "ISC",
 "dependencies": {
 "express": "^4.19.2"
 }
