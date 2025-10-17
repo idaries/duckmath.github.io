@@ -1,1 +1,1 @@
-{ "name": "cloud-run-app", "version": "1.0.0", "description": "A minima Node.js app for Cloud Run deployment.", "main": "server.js", "scripts": { "start": "node server.js", "test": "exit 0" }, "dependencies": { "express": "^4.19.2" } }
+{ "name": "cloud-run-app", "version": "1.0.0", "description": "A minima Node.js app for Cloud Run deployment.", "main": "server.js", "scripts": { "start": "node server.js", "test": "exit 0", "build": "npm run build" }, "dependencies": { "express": "^4.19.2" } }
